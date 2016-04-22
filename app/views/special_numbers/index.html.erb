@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Special Numbers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Special</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @special_numbers.each do |special_number| %>
+      <tr>
+        <td><%= special_number.special %></td>
+        <td><%= link_to 'Show', special_number %></td>
+        <td><%= link_to 'Edit', edit_special_number_path(special_number) %></td>
+        <td><%= link_to 'Destroy', special_number, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Special number', new_special_number_path %>
